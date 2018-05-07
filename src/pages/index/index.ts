@@ -32,7 +32,8 @@ export default class extends MyPage {
   }
 
   viewMoreTodos(){
-    wx.navigateTo({url: "/pages/todos/todos"})
+    this.app.$url.todos.go()
+    // wx.navigateTo({url: "/pages/todos/todos"})
   }
 
   toggleDemoToast() {
