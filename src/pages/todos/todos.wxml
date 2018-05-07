@@ -1,0 +1,22 @@
+<!--
+  此文件是由模板文件 ".dtpl/page/$rawModuleName.wxml.dtpl" 生成的，你可以自行修改模板
+
+  注意：
+  1. 如果没有语法高亮，且你使用的是 vscode 编辑器的话，建义在 vscode 插件库中安装 minapp-vscode 插件
+-->
+<form bindsubmit="onNewTodoFormSubmit">
+<input placeholder="请输入待办事项" 
+name="newTodoContent" value="{{newTodoContent}}"
+bind:input="onInputNewTodoContent"
+></input>
+<button form-type="submit">新建</button>
+<text wx:if="{{newTodoError}}">{{newTodoError}}</text>
+</form>
+
+<todoitem
+  wx:for="{{todos}}"
+  wx:for-item="todo" 
+  wx:key="index"
+   done="{{todo.done}}" content="{{todo.content}}" index="{{index}}"
+   bind:deletetodo="onDeleteTodo"
+   />
